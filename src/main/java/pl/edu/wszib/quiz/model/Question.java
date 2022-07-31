@@ -9,6 +9,7 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer questionId;
+    private String questionText;
     private String category;
     private String optionA;
     private String optionB;
@@ -20,8 +21,9 @@ public class Question {
     public Question() {
     }
 
-    public Question(Integer questionId, String category, String optionA, String optionB, String optionC, String optionD, Integer answer, Integer chose) {
+    public Question(Integer questionId, String questionText, String category, String optionA, String optionB, String optionC, String optionD, Integer answer, Integer chose) {
         this.questionId = questionId;
+        this.questionText = questionText;
         this.category = category;
         this.optionA = optionA;
         this.optionB = optionB;
@@ -37,6 +39,14 @@ public class Question {
 
     public void setQuestionId(Integer questionId) {
         this.questionId = questionId;
+    }
+
+    public String getQuestionText() {
+        return questionText;
+    }
+
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
     }
 
     public String getCategory() {

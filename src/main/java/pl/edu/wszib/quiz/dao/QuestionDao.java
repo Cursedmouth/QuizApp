@@ -6,4 +6,6 @@ import pl.edu.wszib.quiz.model.Question;
 
 @Repository
 public interface QuestionDao extends CrudRepository<Question, Integer> {
+    Question findFirstByQuestionText(String questionText);
+
 }

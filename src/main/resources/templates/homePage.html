@@ -7,19 +7,17 @@
 
 
     <div class="uk-section">
-        <div class="uk-container uk-container-small">
-            <div class="uk-cover-container uk-height-medium uk-margin-small">
 
-            </div>
-            <article class="uk-article uk-margin-large uk-text-center">
 
                 <h1 th:text="${title}"></h1>
 
-            </article>
-            <div class="uk-cover-container uk-height-medium uk-margin-small">
+                <form class="card bg-dark py-5 px-4" action="/Tu_będzie_przekierowanie_na_wybór_kategorii" method="POST">
+                    <p>Podaj swoje imię</p>
+                    <input type="text" name="username"/>
+                    <button type="submit" class="StartButton">Rozpocznij Grę</button>
+                </form>
 
-            </div>
-        </div>
+
     </div>
 
 

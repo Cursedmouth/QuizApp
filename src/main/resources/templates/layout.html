@@ -15,7 +15,7 @@
 <body>
 
 <div class="uk-container uk-container-large">
-    <nav></nav>
+    <nav th:replace="~{navigation :: nav}"></nav>
 
     <div th:replace="${content}"></div>
 </div>

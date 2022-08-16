@@ -23,7 +23,7 @@ public class Question {
 
     // wycięte ( Integer questionId, <- ponieważ GenerationType.AUTO )
     public Question(String questionText, String category, String optionA, String optionB, String optionC, String optionD, Integer answer, Integer chose) {
-        //this.questionId = questionId;
+        this.questionId = questionId;
         this.questionText = questionText;
         this.category = category;
         this.optionA = optionA;

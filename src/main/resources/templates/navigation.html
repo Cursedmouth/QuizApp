@@ -11,8 +11,10 @@
         <ul class="uk-navbar-nav">
             <a th:href="@{/}" class="uk-logo uk-navbar-item"><i class="fa-solid fa-face-grin-stars"></i>Start</a>
 
-            <li><a th:href="@{/}"><i class="fa-solid fa-trophy"></i>Wyniki</a></li>
 
+            <li class="nav-item"th:classappend="${title == 'Wyniki' ? 'active' : ''}">
+                <a class="nav-link" th:href="@{/highscore}"><i class="fa-solid fa-trophy"></i>Wyniki</a>
+            </li>
         </ul>
     </div>
 </nav>

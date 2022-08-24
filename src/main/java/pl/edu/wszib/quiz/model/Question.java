@@ -1,16 +1,18 @@
 package pl.edu.wszib.quiz.model;
 
 import javax.persistence.*;
+import java.util.Set;
+
 
 @Entity
-@Table(name = "Questions")
+@Table(name = "questions")
 public class Question {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer questionId;
     private String questionText;
-    private String category;
+    private String category; // chyba do wycięcia category stąd <=======
     private String optionA;
     private String optionB;
     private String optionC;
@@ -18,11 +20,26 @@ public class Question {
     private Integer answer;
     private Integer chose;
 
+    @ManyToMany
+    @JoinTable(name = "question_category", joinColumns = @JoinColumn(name = "questionId"),
+            inverseJoinColumns = @JoinColumn(name = "categoryId"))
+    private Set<Category> categories;
+
     public Question() {
     }
 
-    // wycięte ( Integer questionId, <- ponieważ GenerationType.AUTO )
-    public Question(String questionText, String category, String optionA, String optionB, String optionC, String optionD, Integer answer, Integer chose) {
+    // wycięte ( Integer questionId, <- ponieważ GenerationType.AUTO ) << jednak nie wycięte bo generation type zmieniony na identity
+
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
+    public Question(Integer questionId, String questionText, String category, String optionA, String optionB, String optionC, String optionD, Integer answer, Integer chose) {
         this.questionId = questionId;
         this.questionText = questionText;
         this.category = category;
@@ -32,6 +49,7 @@ public class Question {
         this.optionD = optionD;
         this.answer = answer;
         this.chose = chose;
+
     }
 
     public Integer getQuestionId() {
@@ -105,4 +123,6 @@ public class Question {
     public void setChose(Integer chose) {
         this.chose = chose;
     }
+
+
 }

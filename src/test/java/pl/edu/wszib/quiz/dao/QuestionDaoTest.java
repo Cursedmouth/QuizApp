@@ -27,8 +27,8 @@ class QuestionDaoTest {
 
     @BeforeEach
     void setUp() {
-        Question question1 = new Question(QUESTION_TEXT1, CATEGORY_MUSIC, "OPTION_A", "OPTION_B", "OPTION_C", "OPTION_D", 3, -1);
-        Question question2 = new Question(QUESTION_TEXT2, CATEGORY_SPORT, "OPTION_A", "OPTION_B", "OPTION_C", "OPTION_D", 2, -1);
+        Question question1 = new Question(1,QUESTION_TEXT1, CATEGORY_MUSIC, "OPTION_A", "OPTION_B", "OPTION_C", "OPTION_D", 3, -1);
+        Question question2 = new Question(2,QUESTION_TEXT2, CATEGORY_SPORT, "OPTION_A", "OPTION_B", "OPTION_C", "OPTION_D", 2, -1);
 
         assertNull(question1.getQuestionId());
         assertNull(question2.getQuestionId());
@@ -42,7 +42,7 @@ class QuestionDaoTest {
 
     @Test
     void testFetchData() {
-        Question question = questionDao.findFirstByQuestionText(QUESTION_TEXT1);
+        Question question = questionDao.findFirstByQuestionText(QUESTION_TEXT2);
         assertEquals(QUESTION_TEXT1, question.getQuestionText() , "Znaleziono nieprawidłowe pytanie");
     }
 

@@ -1,8 +1,10 @@
 package pl.edu.wszib.quiz.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
-
+@Component
 @Entity
 @Table(name = "scores")
 public class Score {
@@ -21,8 +23,6 @@ public class Score {
         this.username = username;
         this.overallScore = overallScore;
     }
-
-
 
     public Integer getId() {
         return id;

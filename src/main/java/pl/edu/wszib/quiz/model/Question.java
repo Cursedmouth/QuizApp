@@ -1,9 +1,11 @@
 package pl.edu.wszib.quiz.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.Set;
 
-
+@Component
 @Entity
 @Table(name = "questions")
 public class Question {
@@ -124,5 +126,9 @@ public class Question {
         this.chose = chose;
     }
 
+    @Override
+    public String toString() {
+        return "Question [questionId=" + questionId + ", questionText=" + questionText + ", category=" + category + ", optionA=" + optionA + ", optionB=" + optionB + ", optionC=" + optionC + ", optionD=" + optionD + ", answer=" + answer + ", chose=" + chose + "]";
 
+    }
 }

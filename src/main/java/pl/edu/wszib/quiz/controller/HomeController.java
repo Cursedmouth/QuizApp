@@ -8,10 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @Value("${app.title.homePage}")
+   /* @Value("${app.title.homePage}")
     private String title;
 
     @GetMapping
+    public String showHomePage(Model model) {
+        model.addAttribute("title", title);
+        return "homePage";
+    }*/
+
+    @Value("${app.title.homePage}")
+    private String title;
+
+    @GetMapping("/")
     public String showHomePage(Model model) {
         model.addAttribute("title", title);
         return "homePage";

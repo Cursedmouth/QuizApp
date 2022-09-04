@@ -5,38 +5,82 @@
 </head>
 <body>
 
+<!--    <div class="uk-section">-->
+
+
+<!--                <form class="card bg-dark py-5 px-4" action="/quiz" method="POST">-->
+<!--                    <p>Podaj swoje imię</p>-->
+<!--                    <input type="text" name="username"/>-->
+<!--                    <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>-->
+<!--                    <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 1</button>-->
+<!--&lt;!&ndash;                    <button type="submit" class="btn btn-warning">Kategoria1</button>&ndash;&gt;-->
+
+<!--                </form>-->
+
+<!--                <form class="card bg-dark py-5 px-4" action="/quiz2" method="POST">-->
+<!--                    <p>Podaj swoje imię</p>-->
+<!--                    <input type="text" name="username"/>-->
+<!--                    <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>-->
+<!--                    <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 2</button>-->
+<!--                    &lt;!&ndash;                    <button type="submit" class="btn btn-warning">Kategoria2</button>&ndash;&gt;-->
+
+<!--                    &lt;!&ndash;                    <button type="submit" class="btn btn-warning">Kategoria3</button>&ndash;&gt;-->
+
+<!--                </form>-->
+
+<!--                <form class="card bg-dark py-5 px-4" action="/quiz3" method="POST">-->
+<!--                    <p>Podaj swoje imię</p>-->
+<!--                    <input type="text" name="username"/>-->
+<!--                    <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>-->
+
+<!--                     <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 3</button>-->
+<!--                     &lt;!&ndash;                    <button type="submit" class="btn btn-warning">Kategoria3</button>&ndash;&gt;-->
+
+<!--                </form>-->
+<!--    </div>-->
     <div class="uk-section">
+        <div class="uk-container uk-container-small">
+            <div class="uk-child-width-1-3 uk-grid-small" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                        <form class="card bg-dark py-5 px-4" action="/quiz" method="POST">
+                            <p>Podaj swoje imię</p>
+                            <input type="text" name="username"/>
+                            <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
+                            <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 1</button>
+                            <!--                    <button type="submit" class="btn btn-warning">Kategoria1</button>-->
 
-                <form class="card bg-dark py-5 px-4" action="/quiz" method="POST">
-                    <p>Podaj swoje imię</p>
-                    <input type="text" name="username"/>
-                    <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
-                    <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 1</button>
-<!--                    <button type="submit" class="btn btn-warning">Kategoria1</button>-->
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                        <form class="card bg-dark py-5 px-4" action="/quiz2" method="POST">
+                            <p>Podaj swoje imię</p>
+                            <input type="text" name="username"/>
+                            <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
+                            <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 2</button>
+                            <!--                    <button type="submit" class="btn btn-warning">Kategoria2</button>-->
 
-                </form>
+                            <!--                    <button type="submit" class="btn btn-warning">Kategoria3</button>-->
 
-                <form class="card bg-dark py-5 px-4" action="/quiz2" method="POST">
-                    <p>Podaj swoje imię</p>
-                    <input type="text" name="username"/>
-                    <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
-                    <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 2</button>
-                    <!--                    <button type="submit" class="btn btn-warning">Kategoria2</button>-->
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                        <form class="card bg-dark py-5 px-4" action="/quiz3" method="POST">
+                            <p>Podaj swoje imię</p>
+                            <input type="text" name="username"/>
+                            <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
 
-                    <!--                    <button type="submit" class="btn btn-warning">Kategoria3</button>-->
-
-                </form>
-
-                <form class="card bg-dark py-5 px-4" action="/quiz3" method="POST">
-                    <p>Podaj swoje imię</p>
-                    <input type="text" name="username"/>
-                    <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
-
-                     <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 3</button>
-                     <!--                    <button type="submit" class="btn btn-warning">Kategoria3</button>-->
-
-                </form>
+                            <button type="submit" class="btn btn-warning"><i class="fa-solid fa-circle-play"></i> Kategoria 3</button>
+<!--                        <button type="submit" class="btn btn-warning">Kategoria3</button>-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </body>
 </html>

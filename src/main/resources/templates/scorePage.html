@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: template (~{:: .uk-section})}">
 <head>
-
 </head>
 <body>
-
 <div class="uk-section">
-    <div class="container py-5 px-4">
-        <h1 class="bg-danger text-light">Twój wynik:</h1>
-
-<!--        <div class="d-flex justify-content-center">-->
-<!--            <p>Imie:&nbsp;&nbsp;</p>-->
-
-<!--            <p th:if="${score}" th:text="${score.username}"></p>-->
-
-
-            <table class="bg-dark text-light">
+    <div class="uk-container uk-container-small">
+        <table class="uk-table uk-table-striped">
+            <th><b><center>Twój Wynik:</center></b></th>
+            <th> </th>
                 <tr>
                     <th>Imię</th>
                     <th>Punkty</th>
@@ -23,19 +15,10 @@
                 <tr>
                     <td th:text="${score.username}"></td>
                     <td th:text="${score.overallScore}"></td>
-
                 </tr>
             </table>
         </div>
-
-<!--        <div class="d-flex justify-content-center">-->
-<!--            <p>Punkty:&nbsp;&nbsp;</p>-->
-<!--            <p th:if="${score}" th:text="${score.overallScore}"></p>-->
-<!--        </div>-->
-
     </div>
-
 </div>
-
 </body>
 </html>

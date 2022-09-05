@@ -22,20 +22,8 @@ public class Question {
     private Integer answer;
     private Integer chose;
 
-   /* @OneToMany
-    private Set<Category> categories;*/
-
     public Question() {
     }
-
-
-//    public Set<Category> getCategories() {
-//        return categories;
-//    }
-
-//    public void setCategories(Set<Category> categories) {
-//        this.categories = categories;
-//    }
 
     public Question(Integer questionId, String questionText, String category, String optionA, String optionB, String optionC, String optionD, Integer answer, Integer chose) {
         this.questionId = questionId;

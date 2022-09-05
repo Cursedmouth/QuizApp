@@ -32,7 +32,6 @@ public class QuizService {
 
     public QuestionForm getQuestions(String category) {
         List<Question> allQuestions = questionDao.findAllQuestionsByCategory(category).stream().collect(toList());
-        ;
         List<Question> questionList = new ArrayList<Question>();
 
         Random random = new Random();
@@ -41,25 +40,16 @@ public class QuizService {
             int randomQuestion = random.nextInt(allQuestions.size());
             questionList.add(allQuestions.get(randomQuestion));
             allQuestions.remove(randomQuestion);
-
         }
-
         questionForm.setQuestions(questionList);
-
         return questionForm;
-
-
     }
-
-
 
     public int getScore(QuestionForm questionForm) {
         int correct = 0;
-
         for(Question question: questionForm.getQuestions())
             if(Objects.equals(question.getAnswer(), question.getChose()))
                 correct++;
-
         return correct;
     }
 
@@ -72,7 +62,7 @@ public class QuizService {
 
     public List<Score> getTopScore() {
         List<Score> scoreList = scoreDao.findAll(Sort.by(Sort.Direction.DESC, "overallScore"));
-
         return scoreList;
     }
+
 }

@@ -36,8 +36,6 @@ public class QuizController {
     @PostMapping ("categories")
     public String showCategories() {
         return "categories";
-
-
     }
 
     @PostMapping("quiz")
@@ -66,8 +64,5 @@ public class QuizController {
 
         return "scorePage";
     }
-
-
-
 
 }

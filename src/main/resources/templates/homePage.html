@@ -10,20 +10,18 @@
                 <div>
                     <div class="uk-card uk-card-default uk-card-small uk-card-body">
                         <form id="quiz" action="/quiz" method="POST">
-                            <p>Podaj swoje imię</p>
+                            <p>Podaj imię i wybierz kategorię:</p>
                             <input type="text" name="username"/>
                             <p class="uk-text-warning" th:if="${warning}" th:text="${warning}"></p>
                             </br><select name="category" id="category" form="quiz">
                                 <option value="category1">Star Wars</option>
                                 <option value="category2">Muzyka</option>
-                                <option value="category3">Kategoria testowa</option>
-
+                                <option value="category3">Gry</option>
                             </select>
-                            <button type="submit" class="btn btn-outline-secondary"><i class="fa-solid fa-circle-play"></i>Rozpocznij Quiz</button>
+                            </br><button type="submit" class="btn btn-outline-secondary"><i class="fa-solid fa-circle-play"></i>Rozpocznij Quiz</button>
                           </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

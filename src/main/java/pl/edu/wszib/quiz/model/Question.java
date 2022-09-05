@@ -22,22 +22,20 @@ public class Question {
     private Integer answer;
     private Integer chose;
 
-    @ManyToMany
-    @JoinTable(name = "question_category", joinColumns = @JoinColumn(name = "questionId"),
-            inverseJoinColumns = @JoinColumn(name = "categoryId"))
-    private Set<Category> categories;
+   /* @OneToMany
+    private Set<Category> categories;*/
 
     public Question() {
     }
 
 
-    public Set<Category> getCategories() {
-        return categories;
-    }
+//    public Set<Category> getCategories() {
+//        return categories;
+//    }
 
-    public void setCategories(Set<Category> categories) {
-        this.categories = categories;
-    }
+//    public void setCategories(Set<Category> categories) {
+//        this.categories = categories;
+//    }
 
     public Question(Integer questionId, String questionText, String category, String optionA, String optionB, String optionC, String optionD, Integer answer, Integer chose) {
         this.questionId = questionId;

@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
+import static java.util.stream.Collectors.toList;
+
 @Service
 public class QuizService {
 
@@ -28,8 +30,9 @@ public class QuizService {
     @Autowired
     ScoreDao scoreDao;
 
-    public QuestionForm getQuestions() {
-        List<Question> allQuestions = questionDao.findAll();
+    public QuestionForm getQuestions(String category) {
+        List<Question> allQuestions = questionDao.findAllQuestionsByCategory(category).stream().collect(toList());
+        ;
         List<Question> questionList = new ArrayList<Question>();
 
         Random random = new Random();

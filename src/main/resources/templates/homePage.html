@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: template (~{:: .uk-section})}">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: template (~{:: .uk-section})}"
+      xmlns="http://www.w3.org/1999/html">
 <head>
 </head>
 <body>
@@ -8,34 +9,21 @@
             <div class="uk-child-width-1-3 uk-grid-small" uk-grid>
                 <div>
                     <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                        <form action="/quiz" method="POST">
+                        <form id="quiz" action="/quiz" method="POST">
                             <p>Podaj swoje imię</p>
                             <input type="text" name="username"/>
                             <p class="uk-text-warning" th:if="${warning}" th:text="${warning}"></p>
-                            <button type="submit" class="btn btn-outline-secondary"><i class="fa-solid fa-circle-play"></i> Kategoria 1</button>
+                            </br><select name="category" id="category" form="quiz">
+                                <option value="category1">Star Wars</option>
+                                <option value="category2">Muzyka</option>
+                                <option value="category3">Kategoria testowa</option>
+
+                            </select>
+                            <button type="submit" class="btn btn-outline-secondary"><i class="fa-solid fa-circle-play"></i>Rozpocznij Quiz</button>
                           </form>
                     </div>
                 </div>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                        <form action="/quiz2" method="POST">
-                            <p>Podaj swoje imię</p>
-                            <input type="text" name="username"/>
-                            <p class="uk-text-warning" th:if="${warning}" th:text="${warning}"></p>
-                            <button type="submit" class="btn btn-outline-secondary"><i class="fa-solid fa-circle-play"></i> Kategoria 2</button>
-                         </form>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                        <form action="/quiz3" method="POST">
-                            <p>Podaj swoje imię</p>
-                            <input type="text" name="username"/>
-                            <p class="uk-text-warning" th:if="${warning}" th:text="${warning}"></p>
-                            <button type="submit" class="btn btn-outline-secondary"><i class="fa-solid fa-circle-play"></i> Kategoria 3</button>
-                        </form>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

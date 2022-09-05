@@ -41,7 +41,7 @@ public class QuizController {
     }
 
     @PostMapping("quiz")
-    public String quiz(@RequestParam String username, Model model, RedirectAttributes ra) {
+    public String quiz(@RequestParam String username, @RequestParam String category, Model model, RedirectAttributes ra) {
         if(username.equals("")) {
             ra.addFlashAttribute("warning", "Imię nie może być puste");
             return "redirect:/";
@@ -50,14 +50,13 @@ public class QuizController {
         submitted = false;
         score.setUsername(username);
 
-        QuestionForm questionForm = quizService.getQuestions();
+        QuestionForm questionForm = quizService.getQuestions(category);
         model.addAttribute("questionForm", questionForm);
 
         return "quizPage";
     }
 
     @PostMapping("submit")
-
     public String submit(@ModelAttribute QuestionForm questionForm, Model model) {
         if(!submitted) {
             score.setOverallScore(quizService.getScore(questionForm));

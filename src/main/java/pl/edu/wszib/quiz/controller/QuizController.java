@@ -31,14 +31,7 @@ public class QuizController {
         return score;
     }
 
-//    @Value("${app.title.homePage}")
-//    private String title;
-//
-//    @GetMapping("/")
-//    public String showHomePage(Model model) {
-//        model.addAttribute("title", title);
-//        return "homePage";
-//    }
+
 
     @PostMapping ("categories")
     public String showCategories() {

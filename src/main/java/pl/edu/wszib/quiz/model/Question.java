@@ -14,7 +14,7 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer questionId;
     private String questionText;
-    private String category; // chyba do wycięcia category stąd <=======
+    private String category;
     private String optionA;
     private String optionB;
     private String optionC;
@@ -29,8 +29,6 @@ public class Question {
 
     public Question() {
     }
-
-    // wycięte ( Integer questionId, <- ponieważ GenerationType.AUTO ) << jednak nie wycięte bo generation type zmieniony na identity
 
 
     public Set<Category> getCategories() {

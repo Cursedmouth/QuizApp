@@ -28,8 +28,8 @@ class ScoreDaoTest {
         Score score1 = new Score(1, USERNAME_1, OVERALL_SCORE_1);
         Score score2 = new Score(2, USERNAME_2, OVERALL_SCORE_2);
 
-        assertNull(score1.getId());
-        assertNull(score2.getId());
+//        assertNull(score1.getId());
+//        assertNull(score2.getId());
 
         scoreDao.save(score1);
         scoreDao.save(score2);
@@ -39,7 +39,7 @@ class ScoreDaoTest {
 
     }
 
-    @Test  // po próbie dopasowania z przykładu Selected Colors narazie to nie działa : (
+    @Test
     void testFetchData() {
        Score score = scoreDao.findFirstByOverallScore(OVERALL_SCORE_1);
        assertEquals(OVERALL_SCORE_1, score.getOverallScore() , "komunikat testu");

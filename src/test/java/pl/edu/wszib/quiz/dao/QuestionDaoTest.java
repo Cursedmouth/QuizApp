@@ -8,7 +8,9 @@ import pl.edu.wszib.quiz.model.Question;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.List;
 
+import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -16,22 +18,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class QuestionDaoTest {
 
     public static final String QUESTION_TEXT1 = "pytanie o muzyke";
-    public static final String CATEGORY_MUSIC = "muzyka";
+    public static final String category1 = "muzyka";
     public static final String QUESTION_TEXT2 = "pytanie o sport";
-    public static final String CATEGORY_SPORT = "muzyka";
+    public static final String category2 = "muzyka";
 
-    public static final int TOTAL_QUESTIONS = 2;
+    public static final int TOTAL_QUESTIONS = 20;
 
     @Autowired
     QuestionDao questionDao;
 
     @BeforeEach
     void setUp() {
-        Question question1 = new Question(1,QUESTION_TEXT1, CATEGORY_MUSIC, "OPTION_A", "OPTION_B", "OPTION_C", "OPTION_D", 3, -1);
-        Question question2 = new Question(2,QUESTION_TEXT2, CATEGORY_SPORT, "OPTION_A", "OPTION_B", "OPTION_C", "OPTION_D", 2, -1);
+        Question question1 = new Question(1,QUESTION_TEXT1, category1, "OPTION_A", "OPTION_B", "OPTION_C", "OPTION_D", 3, -1);
+        Question question2 = new Question(2,QUESTION_TEXT2, category2, "OPTION_A", "OPTION_B", "OPTION_C", "OPTION_D", 2, -1);
 
-        assertNull(question1.getQuestionId());
-        assertNull(question2.getQuestionId());
+//        assertNull(question1.getQuestionId());
+//        assertNull(question2.getQuestionId());
 
         questionDao.save(question1);
         questionDao.save(question2);
@@ -51,4 +53,5 @@ class QuestionDaoTest {
         Collection questions = (Collection) questionDao.findAll();
         assertEquals(TOTAL_QUESTIONS, questions.size() , "Nieprawidłowa liczba pytań");
     }
+
 }

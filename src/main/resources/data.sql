@@ -72,7 +72,30 @@ values(
           2,
           -1)
 ;
-
+insert into questions(questionId, questionText, category, optionA, optionB, optionC, optionD, answer, chose)
+values(
+          7,
+          'C3PO to droid typu:',
+          'category1',
+          'Medyczny',
+          'Astramech',
+          'Protokolarnego',
+          'Bojowego',
+          3,
+          -1)
+;
+insert into questions(questionId, questionText, category, optionA, optionB, optionC, optionD, answer, chose)
+values(
+          8,
+          'Stolica Galaktycznej Republiki to planeta:',
+          'category1',
+          'Naboo',
+          'Yavin 4',
+          'Endor',
+          'Coruscant',
+          3,
+          -1)
+;
 
 -- Kategoria 2
 
@@ -156,106 +179,75 @@ values(
 insert into questions(questionId, questionText, category, optionA, optionB, optionC, optionD, answer, chose)
 values(
           21,
-          'Pytanie testowe1:',
+          'Wolfenstain 3d z 1992 roku to gra z gatunku:',
           'category3',
-          'Yes',
-          'Nope',
-          'Nope',
-          'Nope',
+          'FPS',
+          'RPG',
+          'RTS',
+          'Point and Click',
           1,
           -1)
 ;
 insert into questions(questionId, questionText, category, optionA, optionB, optionC, optionD, answer, chose)
 values(
           22,
-          'Pytanie testowe2:',
+          'Dune 2 - strategiczna gra czasu rzeczywistego wydana w 1992 roku przez studio:',
           'category3',
-          'Nope',
-          'Yes',
-          'Nope',
-          'Nope',
+          'Blizzard Entertainment',
+          'Westwood Studios',
+          'CD Projekt',
+          'Valve',
           2,
           -1)
 ;
 insert into questions(questionId, questionText, category, optionA, optionB, optionC, optionD, answer, chose)
 values(
           23,
-          'Pytanie testowe3:',
+          'Warcraft II – strategiczna gra czasu rzeczywistego wydana w 1995 roku przez firmę Blizzard opowiada o konflikcie:',
           'category3',
-          'Nope',
-          'Nope',
-          'Yes',
-          'Nope',
+          'Ludzi z Elfami ',
+          'Elfów z Krasnoludami',
+          'Ludzi z Orkami',
+          'Orków z Niziołkami',
           3,
           -1)
 ;
 insert into questions(questionId, questionText, category, optionA, optionB, optionC, optionD, answer, chose)
 values(
           24,
-          'Pytanie testowe4:',
+          'Akcja serii gier Fallout rozgrywa się na terenie zniszczonej wojną atmową:',
           'category3',
-          'Nope',
-          'Nope',
-          'Nope',
-          'Yes',
+          'Europie',
+          'Azji',
+          'Afryce',
+          'Ameryce',
           4,
           -1)
 ;
 insert into questions(questionId, questionText, category, optionA, optionB, optionC, optionD, answer, chose)
 values(
           25,
-          'Pytanie testowe5:',
+          'W grze Gothic 2 z 2005r wcielamy się w postać:',
           'category3',
-          'Yes',
-          'Nope',
-          'Nope',
-          'Nope',
+          'Bezimiennego',
+          'Gorna',
+          'Xardasa',
+          'Attile',
           1,
           -1)
 ;
 insert into questions(questionId, questionText, category, optionA, optionB, optionC, optionD, answer, chose)
 values(
           26,
-          'Pytanie testowe6:',
+          'Pierwszym Bossem w grze Diablo 2 jest:',
           'category3',
-          'Nope',
-          'Yes',
-          'Nope',
-          'Nope',
+          'Diablo',
+          'Andriel',
+          'Mephisto',
+          'Baal',
           2,
           -1)
 ;
-
--- Kategorie
-
-INSERT INTO categories (categoryid, categoryname)
-VALUES (1, 'Kategoria 1'),
-       (2, 'Kategoria 2'),
-       (3, 'Kategoria 3');
-
-
--- Pytania Kategorii
-INSERT INTO question_category (questionid, categoryid)
-VALUES (1, 1),
-       (2, 1),
-       (3, 1),
-       (4, 1),
-       (5, 1),
-       (6, 1),
-       (11, 2),
-       (12, 2),
-       (13, 2),
-       (14, 2),
-       (15, 2),
-       (16, 2),
-       (21, 3),
-       (22, 3),
-       (23, 3),
-       (24, 3),
-       (25, 3),
-       (26, 3);
-
-
 
 -- Komendy
 
@@ -265,8 +257,6 @@ select * from questions;
 select * from questions WHERE category='category1';
 select * from questions WHERE category='category2';
 select * from questions WHERE category='category3';
-select * from categories;
-select * from question_category;
 select * from scores;
 
 -- DELETE
@@ -274,9 +264,9 @@ select * from scores;
 DELETE from questions WHERE category='category1';
 DELETE from questions WHERE category='category2';
 DELETE from questions WHERE category='category3';
-DELETE from categories;
-DELETE from question_category WHERE categoryid='1';
-DELETE from question_category WHERE categoryid='2';
-DELETE from question_category WHERE categoryid='3';
 DELETE from scores;
+
+
+
+
 
